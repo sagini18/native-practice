@@ -10,6 +10,8 @@ import ButtonTypes from "../AwesomeProject/pages/buttonTypes.js";
 import Cafe from "../AwesomeProject/pages/cafe.js";
 import Translate from "./pages/translate.js";
 import To_Do from "./pages/to-do-list.js";
+import Async_Storage from "./pages/AsyncStorage.js";
+import FetchAPI from "./pages/FetchAPI.js";
 
 const Root = createNativeStackNavigator();
 
@@ -28,6 +30,8 @@ export default function App() {
         <Root.Screen name="Flex" component={Flex} />
         <Root.Screen name="SectionList" component={SectionList} />
         <Root.Screen name="To-Do List" component={To_Do} />
+        <Root.Screen name="Async Storage" component={Async_Storage} />
+        <Root.Screen name="Fetch API" component={FetchAPI} />
       </Root.Navigator>
     </NavigationContainer>
   );
@@ -67,6 +71,16 @@ const HomeScreen = ({ navigation }) => {
       <Button
         title="To-Do List"
         onPress={() => navigation.navigate("To-Do List")}
+      />
+      <Text />
+      <Button
+        title="Async Storage"
+        onPress={() => navigation.navigate("Async Storage")}
+      />
+      <Text />
+      <Button
+        title="Fetch API"
+        onPress={() => navigation.navigate("Fetch API")}
       />
     </View>
   );
