@@ -38,7 +38,7 @@ const Animation = () => {
       </Animated.Text>
       <View style={styles.buttonContainer}>
         <Button
-          title="Interpolate Close"
+          title="Interpolate"
           onPress={() =>
             Animated.timing(value.current, {
               toValue: 0,
@@ -74,3 +74,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,
   },
 });
+
+// library: https://github.com/software-mansion/react-native-reanimated

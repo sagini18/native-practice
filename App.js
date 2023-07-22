@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, ScrollView, StyleSheet, Button } from "react-native";
 import FlastList from "../AwesomeProject/pages/flatList.js";
 import Flex from "../AwesomeProject/pages/flex.js";
 import SectionList from "../AwesomeProject/pages/sectionList.js";
@@ -13,6 +13,7 @@ import To_Do from "./pages/to-do-list.js";
 import Async_Storage from "./pages/AsyncStorage.js";
 import FetchAPI from "./pages/FetchAPI.js";
 import Animation from "./pages/Animation.js";
+import Gestures from "./pages/gestures/Gestures.js";
 
 const Root = createNativeStackNavigator();
 
@@ -33,14 +34,15 @@ export default function App() {
         <Root.Screen name="To-Do List" component={To_Do} />
         <Root.Screen name="Async Storage" component={Async_Storage} />
         <Root.Screen name="Fetch API" component={FetchAPI} />
-        <Root.Screen name="Animation" children={Animation} />
+        <Root.Screen name="Animation" component={Animation} />
+        <Root.Screen name="Gestures" component={Gestures} />
       </Root.Navigator>
     </NavigationContainer>
   );
 }
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Button
         title="Button Types"
         onPress={() => navigation.navigate("Button Types")}
@@ -89,10 +91,15 @@ const HomeScreen = ({ navigation }) => {
         title="Animation"
         onPress={() => navigation.navigate("Animation")}
       />
-    </View>
+      <Text />
+      <Button
+        title="Gestures"
+        onPress={() => navigation.navigate("Gestures")}
+      />
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, marginHorizontal: 60 },
 });
